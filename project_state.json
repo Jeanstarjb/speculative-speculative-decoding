@@ -18,7 +18,7 @@
     {
       "id": 3,
       "description": "ML Engine: Develop and fine-tune the SSD algorithm (Saguaro) as an ML microservice, ensuring it supports parallel speculative decoding and achieves the promised performance improvements.",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "id": 4,
