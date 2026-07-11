@@ -13,7 +13,7 @@
     {
       "id": 2,
       "description": "Core Backend: Implement the backend service to handle API requests, integrate the SSD algorithm, and manage token speculation and verification using optimized inference pipelines.",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "id": 3,
