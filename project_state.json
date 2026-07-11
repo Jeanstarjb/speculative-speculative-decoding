@@ -8,7 +8,7 @@
     {
       "id": 1,
       "description": "Scaffolding & Architecture: Design the overall software architecture, set up the development environment, and create boilerplate code for the backend, frontend, and ML microservice.",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "id": 2,
