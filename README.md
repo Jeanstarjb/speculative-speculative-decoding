@@ -44,3 +44,4 @@ The solution involves creating a high-performance, scalable NLP inference system
 5. Access the ML service at `http://localhost:5000/health`.
 
 - **Completed Task:** Scaffolding & Architecture: Design the overall software architecture, set up the development environment, and create boilerplate code for the backend, frontend, and ML microservice.
+- **Completed Task:** Core Backend: Implement the backend service to handle API requests, integrate the SSD algorithm, and manage token speculation and verification using optimized inference pipelines.
