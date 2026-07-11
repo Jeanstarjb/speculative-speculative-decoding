@@ -1,4 +1,6 @@
 import React from 'react';
+import './App.css';
+import InputOutputPanel from './components/InputOutputPanel';
 
 function App() {
   return (
@@ -7,6 +9,9 @@ function App() {
         <h1>Speculative Speculative Decoding</h1>
         <p>Welcome to the SSD frontend!</p>
       </header>
+      <main>
+        <InputOutputPanel />
+      </main>
     </div>
   );
 }
