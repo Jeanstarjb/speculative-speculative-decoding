@@ -42,3 +42,5 @@ The solution involves creating a high-performance, scalable NLP inference system
 3. Access the frontend at `http://localhost:3000`.
 4. Access the backend API at `http://localhost:8000/docs`.
 5. Access the ML service at `http://localhost:5000/health`.
+
+- **Completed Task:** Scaffolding & Architecture: Design the overall software architecture, set up the development environment, and create boilerplate code for the backend, frontend, and ML microservice.
