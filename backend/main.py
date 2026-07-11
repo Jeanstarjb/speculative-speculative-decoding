@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
+import requests
 
 app = FastAPI()
 
@@ -26,27 +27,26 @@ def run_inference(request: InferenceRequest):
     Perform speculative decoding inference using the SSD algorithm.
     """
     try:
-        # Placeholder for the actual SSD algorithm
-        # Replace this with the actual SSD implementation
-        generated_text = speculative_decoding(
-            input_text=request.input_text,
-            max_tokens=request.max_tokens,
-            temperature=request.temperature,
-            top_k=request.top_k,
-            top_p=request.top_p
+        # Call the ML microservice for SSD-based inference
+        response = requests.post(
+            "http://ml_service:5000/optimize",
+            json={
+                "input_text": request.input_text,
+                "max_tokens": request.max_tokens,
+                "temperature": request.temperature,
+                "top_k": request.top_k,
+                "top_p": request.top_p
+            }
         )
+
+        if response.status_code != 200:
+            raise HTTPException(status_code=response.status_code, detail=response.json())
+
+        result = response.json()
         return InferenceResponse(
-            input_text=request.input_text,
-            generated_text=generated_text,
-            tokens_generated=len(generated_text.split())
+            input_text=result["input_text"],
+            generated_text=result["generated_text"],
+            tokens_generated=result["tokens_generated"]
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error during inference: {str(e)}")
-
-def speculative_decoding(input_text: str, max_tokens: int, temperature: float, top_k: int, top_p: float) -> str:
-    """
-    A mock implementation of the speculative decoding algorithm.
-    Replace this with the actual implementation.
-    """
-    # For now, just return the input text repeated as a placeholder.
-    return input_text + " " + "generated_text_placeholder" * max_tokens
